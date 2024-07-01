@@ -6,19 +6,30 @@
     <title>My Tech Goals</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
+    <script src="index.js"></script>
 </head>
 <body>
     <header>
         <nav>
+            <button id="darkModeToggle" data-testid="darkModeToggle">
+                <span id="toggleText">Toggle Dark Mode</span>
+            </button>
             <ul>
                 <li><a href="#goals" data-testid="nav-goals">Goals</a></li>
                 <li><a href="#contact" data-testid="nav-contact">Contact</a></li>
             </ul>
         </nav>
-        <h1 data-testid="title">My Tech Goals for the Next 2 Years</h1>
+        <h1 data-testid="title" id="main-title"></h1>
     </header>
     <main>
+        <section id="personal-info">
+            <h2>Personal Information</h2>
+            <p>Slack Name: <span data-testid="slackDisplayName">Bitengo</span></p>
+            <p>Current Time (UTC): <span data-testid="currentTimeUTC" id="currentTime"></span></p>
+            <p>Current Day: <span data-testid="currentDay" id="currentDay"></span></p>
+            <p>Slack Email: <span data-testid="slackEmail">danielbitengo@gmail.com</span></p>
+            <img src="./assets/Daniel-photo.jpg" alt="Slack Profile Picture" data-testid="slackProfilePicture">
+        </section>
         <section id="goals" class="goals-container">
             <div class="goal-card" data-testid="goal1">
                 <div class="goal-image">
@@ -27,6 +38,9 @@
                 <div class="goal-content">
                     <h2>1. Master a New Language</h2>
                     <p>Become proficient in a new programming language, probably C++ and maybe Java.</p>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="40"></div>
+                    </div>
                 </div>
             </div>
             <div class="goal-card" data-testid="goal2">
@@ -36,6 +50,9 @@
                 <div class="goal-content">
                     <h2>2. Internet of Things</h2>
                     <p>Gain expertise in IoT technologies, including device programming, networking protocols, and cloud integration.</p>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="50"></div>
+                    </div>
                 </div>
             </div>
             <div class="goal-card" data-testid="goal3">
@@ -45,6 +62,9 @@
                 <div class="goal-content">
                     <h2>3. Cloud Computing Experience</h2>
                     <p>Gain experience with cloud computing platforms, such as AWS or Azure, and learn how to deploy and manage applications in the cloud.</p>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="25"></div>
+                    </div>
                 </div>
             </div>
             <div class="goal-card" data-testid="goal4">
@@ -54,6 +74,9 @@
                 <div class="goal-content">
                     <h2>4. Open-Source Contributions</h2>
                     <p>Contribute to open-source projects and collaborate with other developers to enhance my skills and build a portfolio.</p>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="40"></div>
+                    </div>
                 </div>
             </div>
             <div class="goal-card" data-testid="goal5">
@@ -63,8 +86,19 @@
                 <div class="goal-content">
                     <h2>5. Continuous Learning</h2>
                     <p>Attend tech conferences and workshops to stay up-to-date with the latest industry trends and network with professionals.</p>
+                    <div class="progress-bar">
+                        <div class="progress" data-progress="75"></div>
+                    </div>
                 </div>
             </div>
+        </section>
+        <section id="required-links">
+            <h2>Important Links</h2>
+            <ul>
+                <li><a href="https://hng.tech/learn" target="_blank" rel="noopener" data-testid="hngLink">HNG Learn</a></li>
+                <li><a href="https://keyword.dog" target="_blank" rel="noopener" data-testid="keywordLink">Keyword Dog</a></li>
+                <li><a href="https://scrapeanyweb.site" target="_blank" rel="noopener" data-testid="scrapeanywebLink">Scrape Any Web</a></li>
+            </ul>
         </section>
         <section id="portfolio" class="portfolio-section">
             <h2>Portfolio</h2>

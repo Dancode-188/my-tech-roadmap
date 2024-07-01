@@ -28,7 +28,6 @@ The purpose of this project is to showcase my aspirations and plans for personal
 
 
 ## Features
-
 - Visually appealing and responsive design
 
 - Clear and concise presentation of my tech goals
@@ -41,6 +40,16 @@ The purpose of this project is to showcase my aspirations and plans for personal
 
 - Unique `data-testid` attributes for each element to facilitate testing
 
+- Real-time display of current date and time (UTC)
+
+- Typewriter effect for the main title
+
+- Dark mode toggle for improved readability
+
+- Subtle parallax scrolling effect for visual depth
+
+- Progress bars to visualize goal completion status
+
 
 
 ## Installation
@@ -52,7 +61,7 @@ To run this project locally, follow these steps:
 
   ```
 
-  git clone https://github.com/your-username/repo-name.git
+  git clone https://github.com/Dancode-188/my-tech-roadmap.git
 
   ```
 
@@ -80,6 +89,10 @@ Once you have the project set up locally, you can explore the website by scrolli
 
 - Click on the "Contact" link to find ways to get in touch with me, including my email address and social media profiles.
 
+- Use the dark mode toggle to switch between light and dark themes for comfortable viewing.
+
+- Observe the progress bars to see how close I am to achieving each goal.
+
 
 Feel free to explore the website and provide any feedback or suggestions for improvement.
 
@@ -105,4 +118,4 @@ When contributing to this project, please ensure that your code adheres to the e
 
 ## License
 
-This project is licensed under the \[MIT License\](LICENSE).
+This project is licensed under the [MIT License](LICENSE).

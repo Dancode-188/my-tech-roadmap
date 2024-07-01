@@ -1,3 +1,15 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,8 +18,52 @@ body {
     color: #333;
 }
 
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+body.dark-mode header {
+    background: linear-gradient(-45deg, #2c3e50, #34495e, #2980b9, #3498db);
+}
+
+body.dark-mode section {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+body.dark-mode .goal-card {
+    background-color: #555;
+    color: #f5f5f5;
+}
+
+body.dark-mode .portfolio-section,
+body.dark-mode .contact-section {
+    background-color: #444;
+    color: #f5f5f5;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    background-color: #0056b3;
+}
+
 header {
-    background-color: #222;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -19,48 +75,103 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
 nav ul li a {
+    position: relative;
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 h1 {
     margin: 20px 0;
-    font-size: 32px;
+    font-size: 28px;
 }
 
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 section {
     margin-bottom: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#personal-info {
+    text-align: center;
+}
+
+#personal-info img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .goals-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
 .goal-card {
-    background-color: #fff;
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.goal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .goal-image {
     width: 100%;
-    height: 200px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,8 +190,8 @@ section {
 
 .goal-content h2 {
     margin-top: 0;
-    font-size: 24px;
-    height: 60px;
+    font-size: 20px;
+    height: 50px;
     display: flex;
     align-items: center;
 }
@@ -89,7 +200,50 @@ section {
     flex-grow: 1;
 }
 
-.portfolio-section {
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+#required-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#required-links ul li {
+    margin: 10px;
+}
+
+#required-links ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#required-links ul li a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.portfolio-section, .contact-section {
     background-color: #f9f9f9;
     padding: 40px;
     text-align: center;
@@ -103,34 +257,35 @@ section {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .portfolio-link:hover {
     background-color: #0056b3;
 }
 
-.contact-section {
-    background-color: #f9f9f9;
-    padding: 40px;
-    text-align: center;
-}
-
 .contact-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 960px;
     margin: 0 auto;
 }
 
 .contact-info {
     flex: 1;
-    padding-right: 40px;
+    min-width: 250px;
+    padding: 20px;
 }
 
 .contact-info p {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
 }
 
@@ -150,11 +305,12 @@ section {
     color: #333;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-list li a:hover {
     color: #007bff;
+    transform: translateX(5px);
 }
 
 .contact-list li a i {
@@ -164,7 +320,9 @@ section {
 
 .contact-image {
     flex: 1;
-    text-align: right;
+    min-width: 250px;
+    text-align: center;
+    padding: 20px;
 }
 
 .contact-image img {
@@ -186,13 +344,8 @@ footer {
         flex-direction: column;
     }
 
-    .contact-info {
-        padding-right: 0;
-        margin-bottom: 40px;
-    }
-
-    .contact-image {
-        text-align: center;
+    .contact-info, .contact-image {
+        width: 100%;
     }
 }
 
@@ -202,8 +355,16 @@ footer {
     }
 
     .goal-content h2 {
-        font-size: 20px;
-        height: 50px;
+        font-size: 18px;
+        height: auto;
+    }
+
+    #personal-info img {
+        max-width: 200px;
+    }
+
+    .goals-container {
+        grid-template-columns: 1fr;
     }
 }
 
