@@ -16,6 +16,7 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode {
@@ -104,7 +105,6 @@ nav ul li a::after {
 
 nav ul li a:hover {
     color: #007bff;
-
 }
 
 nav ul li a:hover::after {
@@ -129,6 +129,7 @@ section {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #personal-info {
@@ -243,7 +244,8 @@ img {
     transform: scale(1.05);
 }
 
-.portfolio-section, .contact-section {
+.portfolio-section,
+.contact-section {
     background-color: #f9f9f9;
     padding: 40px;
     text-align: center;
@@ -263,10 +265,6 @@ img {
 .portfolio-link:hover {
     background-color: #0056b3;
     transform: scale(1.05);
-}
-
-.portfolio-link:hover {
-    background-color: #0056b3;
 }
 
 .contact-content {
@@ -344,7 +342,8 @@ footer {
         flex-direction: column;
     }
 
-    .contact-info, .contact-image {
+    .contact-info,
+    .contact-image {
         width: 100%;
     }
 }
