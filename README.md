@@ -60,18 +60,14 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
   ```
-
   git clone https://github.com/Dancode-188/my-tech-roadmap.git
-
   ```
 
 
 2. Navigate to the project directory:
 
   ```
-
-  cd repo-name
-
+  cd my-tech-roadmap
   ```
 
 3. Open the `index.html` file in your preferred web browser.
@@ -100,10 +96,10 @@ Feel free to explore the website and provide any feedback or suggestions for imp
 
 ## Testing
 
-Each element on the website has a unique \`data-testid\` attribute that can be used for testing purposes. These attributes provide easy identification and selection of elements during automated tests.
+Each element on the website has a unique `data-testid` attribute that can be used for testing purposes. These attributes provide easy identification and selection of elements during automated tests.
 
 
-To run tests on the website, you can use testing frameworks like Jest or Cypress. Make sure to set up the necessary testing environment and configure the tests to target the appropriate \`data-testid\` attributes.
+To run tests on the website, you can use testing frameworks like Jest or Cypress. Make sure to set up the necessary testing environment and configure the tests to target the appropriate `data-testid` attributes.
 
 
 
